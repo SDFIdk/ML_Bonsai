@@ -18,11 +18,11 @@ Jupyter notebooks for processing a national land cover map of DK
 	- Remove or save the non-mode blocks from the output directory or the "burner" script will burn values into the non-mode folder as well.
 	- Lastly run the "burner" script. In codeblock 4 set the input directory (indir) and the directory of the vector layers you want burnt into the data (vecdir). Run the 5 code-blocks from the top. **This will 'burn' buildings, water, fields and coastline from geodanmark vector layers into dataset.**
 
-3. Result can now be moved to WMS and a vrt and ovr file can be made.
+3. A vrt and ovr file can be made and final result can be moved to a WMS server.
 	- Build tif for each block using gdalbuildvrt and then gdal_translate (Ex `>>>gdal_translate -a_nodata 0 -co compress=LWZ -co tiled=YES src_data dst_data`)
 	- Build a vrt of the 53 block tifs and then run a gdaladdo on that vrt (EX `>>>call gdaladdo sep2022.vrt -r mode -ro --config GDAL_CACHEMAX 32768 --config GDAL_NUM_THREADS ALL_CPUS --config INTERLEAVE_OVERVIEW PIXEL --config COMPRESS_OVERVIEW DEFLATE --config BIGTIFF_OVERVIEW YES 2 5 15 50 150 500 1500`)
 	- Check that vrt files have relative, not full, paths to tiffs and that "relativeToVRT" is set to 1 (relativeToVRT="1")
-	- Copy block tifs, national vrt and overview to server (Ex: kmsload157.kmsext.dk)
+	- Copy block tifs, national vrt and overview to server (Ex: kmsload157.kmsext.dk) and edit .map-file to point to national vrt file
 	
 ## OBS! For the below! Remember to create new folders, lists and filenames, so you dont overwrite existing one that could be usefull to recreate older project runs. Or just for inspiration or comparisons.
 	
