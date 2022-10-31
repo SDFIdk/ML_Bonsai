@@ -1,7 +1,7 @@
 # ML_Bonsai
 Jupyter notebooks for processing a national land cover map of DK
 
-## Quick Guide to running befæstelsekortlægningen and producing a ML gennerated map.
+## Quick Guide to running befæstelsekortlægningen and producing a ML gennerated LC-map.
 
 ### Prerequisits
 - A conda/mamba shell running a predefined 'job' enviroment
