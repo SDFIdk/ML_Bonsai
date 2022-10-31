@@ -24,7 +24,7 @@ Jupyter notebooks for processing a national land cover map of DK
 	- Check that vrt files have relative, not full, paths to tiffs and that "relativeToVRT" is set to 1 (relativeToVRT="1")
 	- Copy block tifs, national vrt and overview to server (Ex: kmsload157.kmsext.dk)
 	
-##OBS! For the below! Remember to create new folders, lists and filenames, so you dont overwrite existing one that could be usefull to recreate older project runs. Or just for inspiration or comparisons.
+## OBS! For the below! Remember to create new folders, lists and filenames, so you dont overwrite existing one that could be usefull to recreate older project runs. Or just for inspiration or comparisons.
 	
 - Every year, when new data (orthophotos & GeoDK vectorlayers) is available, GeoDK vectors and training data needs to be updated:
 	- relevant vectorlayers (buildings, coast, fields, lakes, water) should be updated if changes have ocured. Get from GeoDK database or lbst homepage in regards to field data. Place in project (Bonsai2022FraAsk) "dk_vector" folder.
