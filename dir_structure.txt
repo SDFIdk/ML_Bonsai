@@ -1,3 +1,6 @@
+Below is the directory structure used in running the national LC mapping. 
+As input and output directories can be changed in the notebooks, this is ofcourse just a suggested directory structure.
+
 -   = Folder one level down
 --  = Folder two levels down
 --- = Folder three levels down
@@ -5,13 +8,13 @@
 Main_Project_Folder
 -dk_vektor
 --block_vector
----bygnnger
----kyst
----marker
----soer
----vand
+---bygnnger   (contains vectorlayers for building from geodanmark)
+---kyst       (contains vectorlayers for the coast from geodanmark)
+---marker     (contains vectorlayers for fields from the danish agriculture agency)
+---soer       (contains vectorlayers for lakes from geodanmark)
+---vand       (contains vectorlayers for water from geodanmark)
 
 -OUTPUTS
---batcherDir
+--batcherDir  (contains outputs from scripts ex. 'classified images')
 
--scripts
+-scripts      (contains the jupyter notebooks)
