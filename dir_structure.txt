@@ -1,0 +1,17 @@
+-   = Folder one level down
+--  = Folder two levels down
+--- = Folder three levels down
+
+Main_Project_Folder
+-dk_vektor
+--block_vector
+---bygnnger
+---kyst
+---marker
+---soer
+---vand
+
+-OUTPUTS
+--batcherDir
+
+-scripts
