@@ -1,14 +1,14 @@
 # ML_Bonsai
-Jupyter notebooks for processing a national land cover map of DK
+Jupyter notebooks for processing a national land cover map of DK  
 
 ## Quick Guide to running befæstelsekortlægningen and producing a ML gennerated LC-map.
 
-### Prerequisits
+### Install Prerequisits
 - A conda/mamba shell running a predefined 'job' enviroment
 - A osgeo/gdal installation or QGIS installation with OSGeo4W shell
 - A machine with GPU 1080 GTX or better
 
-### How-To
+### Usage
 1. Setting up enviroment
  	- Run a mamba prompt using the "job" enviroment. Navigate to folder containing jupyter notebooks (EX: E:\Bonsai2022FraAsk\scripts) and write [>>>jupyter notebook ] in prompt to start jupyter notebooks.
 
@@ -32,9 +32,7 @@ Jupyter notebooks for processing a national land cover map of DK
 		- In the project folder "scripts" there is a "findTrainingImage" jupyter notebook that allows you to get current images over certain choosen areas of interes and copy them from the NAS to your local project (train->trainimages). Run notebook to copy images, then make a vrt of these images.
 		- In the folder "train" there is a geopackage file with at bunch (9643) of points randomly selected over certain areas of DK. Input file into QGIS along with the vrt-file made in the previous step.
 		- In QGIS run the "udtræk rasterværdier til punkter" tool from the procesing toolbox. This adds the RGBI values to the geopackage point file.
-		- copy these values to at txt file (EX: copy from QGIS-attribute-table to excel then copy only the "cid" and "RGBI" values to txt). This will now be the new training data. (EX: all_train_F19.txt for 2019 data)
-		
------------------------------------------------------------------------
-Mark Falkenberg - Danish National Mapping Agengy  
-EMAIL: mafal@sdfi.dk  
-WEB  : http://www.sdfi.dk  
+		- copy these values to at txt file (EX: copy from QGIS-attribute-table to excel then copy only the "cid" and "RGBI" values to txt). This will now be the new training data. (EX: all_train_F19.txt for 2019 data)  
+				
+
+## Build
