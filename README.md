@@ -8,6 +8,16 @@ Jupyter notebooks for processing a national land cover map of DK
 - A osgeo/gdal installation or QGIS installation with OSGeo4W shell
 - A machine with GPU 1080 GTX or better
 
+### Before running
+## OBS! For the below! Remember to create new folders, lists and filenames, so you dont overwrite existing one that could be usefull to recreate older project runs. Or just for inspiration or comparisons.
+- Every year, when new data (orthophotos & GeoDK vectorlayers) is available, GeoDK vectors and training data needs to be updated:
+	- relevant vectorlayers (buildings, coast, fields, lakes, water) should be updated if changes have ocured. Get from GeoDK database or lbst homepage in regards to field data. Place in project (Bonsai2022FraAsk) "dk_vector" folder.
+	- create new training data from new orthophotos:
+		- In the project folder "scripts" there is a "findTrainingImage" jupyter notebook that allows you to get current images over certain choosen areas of interes and copy them from the NAS to your local project (train->trainimages). Run notebook to copy images, then make a vrt of these images.
+		- In the folder "train" there is a geopackage file with at bunch (9643) of points randomly selected over certain areas of DK. Input file into QGIS along with the vrt-file made in the previous step.
+		- In QGIS run the "udtræk rasterværdier til punkter" tool from the procesing toolbox. This adds the RGBI values to the geopackage point file.
+		- copy these values to at txt file (EX: copy from QGIS-attribute-table to excel then copy only the "cid" and "RGBI" values to txt). This will now be the new training data. (EX: all_train_F19.txt for 2019 data)  
+
 ### Usage
 1. Setting up enviroment
  	- Run a mamba prompt using the "job" enviroment. Navigate to folder containing jupyter notebooks (EX: E:\Bonsai2022FraAsk\scripts) and write [>>>jupyter notebook ] in prompt to start jupyter notebooks.
@@ -24,15 +34,3 @@ Jupyter notebooks for processing a national land cover map of DK
 	- Check that vrt files have relative, not full, paths to tiffs and that "relativeToVRT" is set to 1 (relativeToVRT="1")
 	- Copy block tifs, national vrt and overview to server (Ex: kmsload157.kmsext.dk) and edit .map-file to point to national vrt file
 	
-## OBS! For the below! Remember to create new folders, lists and filenames, so you dont overwrite existing one that could be usefull to recreate older project runs. Or just for inspiration or comparisons.
-	
-- Every year, when new data (orthophotos & GeoDK vectorlayers) is available, GeoDK vectors and training data needs to be updated:
-	- relevant vectorlayers (buildings, coast, fields, lakes, water) should be updated if changes have ocured. Get from GeoDK database or lbst homepage in regards to field data. Place in project (Bonsai2022FraAsk) "dk_vector" folder.
-	- create new training data from new orthophotos:
-		- In the project folder "scripts" there is a "findTrainingImage" jupyter notebook that allows you to get current images over certain choosen areas of interes and copy them from the NAS to your local project (train->trainimages). Run notebook to copy images, then make a vrt of these images.
-		- In the folder "train" there is a geopackage file with at bunch (9643) of points randomly selected over certain areas of DK. Input file into QGIS along with the vrt-file made in the previous step.
-		- In QGIS run the "udtræk rasterværdier til punkter" tool from the procesing toolbox. This adds the RGBI values to the geopackage point file.
-		- copy these values to at txt file (EX: copy from QGIS-attribute-table to excel then copy only the "cid" and "RGBI" values to txt). This will now be the new training data. (EX: all_train_F19.txt for 2019 data)  
-				
-
-## Build
